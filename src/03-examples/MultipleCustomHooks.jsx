@@ -5,7 +5,7 @@ import { PokemonName } from './components/PokemonName';
 export const MultipleCustomHooks = () => {
 
     const { increment, counter } = useCounter();
-    const {data, isLoading, hasError} = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
+    const { data, isLoading, hasError } = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
 
     return (
         <>

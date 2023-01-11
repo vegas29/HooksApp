@@ -34,7 +34,7 @@ describe('Pruebas en <MultipleCustomHooks />', () => {
 
         const nextButton = screen.getByRole('button', {name: 'Next Pokemon'});
         expect( nextButton.disabled ).toBeTruthy();
-        screen.debug();
+        // screen.debug();
 
     });
 

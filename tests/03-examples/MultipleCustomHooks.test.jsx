@@ -14,6 +14,7 @@ describe('Pruebas en <MultipleCustomHooks />', () => {
         counter: 1,
         increment: mockIncrement
     });
+    
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -21,13 +22,19 @@ describe('Pruebas en <MultipleCustomHooks />', () => {
 
     test('Debe de mostrar el componente por defecto', () => {
 
+        useFetch.mockReturnValue({
+            data: [{name: 'Pikachu'}],
+            isLoading: true,
+            hasError: null
+        });
+
         render(<MultipleCustomHooks/>);
         expect( screen.getByText('Loading...') );
         expect( screen.getByText('Pokemon Names') );
 
         const nextButton = screen.getByRole('button', {name: 'Next Pokemon'});
         expect( nextButton.disabled ).toBeTruthy();
-        // screen.debug();
+        screen.debug();
 
     });
 
